@@ -1,0 +1,36 @@
+{
+  "ICM_ACTION_COMPATIBLE" : true,
+  "context" : null,
+  "name" : "Custom Add Case Action",
+  "description" : "A custom add case action will be used for adding a custom case in a case page",
+  "properties" : [
+    {
+      "id": "label",
+      "title" : "Add Button Name",
+      "defaultValue" : "Custom Add Case Action",
+      "type" : "string",
+      "isLocalized" : false
+    },
+    {
+      "id" : "solution",
+      "type" : "string",
+      "isLocalized" : false,
+      "title" : "Solution Name"
+    },
+    {
+      "id" : "caseType",
+      "title" : "Case Type",
+      "isLocalized" : false,
+      "type" : "string"
+    }
+  ],
+  "events" : [
+    {
+      "id" : "icm.OpenAddCasePage",
+      "title" : "Open Add Case page",
+      "direction" : "published",
+      "type" : "broadcast",
+      "description" : "This action broadcast an event to create  a new add case page with mentioned details in configurations"
+    }
+  ]
+}
