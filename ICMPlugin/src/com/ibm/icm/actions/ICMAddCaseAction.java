@@ -56,7 +56,7 @@ public class ICMAddCaseAction extends PluginAction {
     public JSONObject getAdditionalConfiguration(Locale locale) {
         String actionDefinition = "{\n" +
                 "  \"ICM_ACTION_COMPATIBLE\" : true,\n" +
-                "  \"context\" : null,\n" +
+                "  \"context\" : [[ \"CasePage\" , \"Coordination\" ]],\n" +
                 "  \"name\" : \"Custom Add Case Action\",\n" +
                 "  \"description\" : \"A custom add case action will be used for adding a custom case in a case page\",\n" +
                 "  \"properties\" : [\n" +
@@ -71,23 +71,30 @@ public class ICMAddCaseAction extends PluginAction {
                 "      \"id\" : \"solution\",\n" +
                 "      \"type\" : \"string\",\n" +
                 "      \"isLocalized\" : false,\n" +
-                "      \"title\" : \"Solution Name\"\n" +
+                "      \"title\" : \"Solution Name\",\n" +
+                "      \"defaultValue\" : \"\"\n" +
                 "    },\n" +
                 "    {\n" +
                 "      \"id\" : \"caseType\",\n" +
                 "      \"title\" : \"Case Type\",\n" +
                 "      \"isLocalized\" : false,\n" +
                 "      \"type\" : \"string\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"id\" : \"canClosePage\",\n" +
+                "      \"title\" : \"Do you want to close case details page when event (icn.AddCase) is run ?\",\n" +
+                "      \"type\" : \"boolean\",\n" +
+                "      \"defaultValue\" : false,\n" +
+                "      \"isLocalized\" : false\n" +
                 "    }\n" +
                 "  ],\n" +
-                "  \"actionModelClass\": \"icm.custom.action.AddCase\",\n" +
                 "  \"events\" : [\n" +
                 "    {\n" +
-                "      \"id\" : \"icm.OpenAddCasePage\",\n" +
+                "      \"id\" : \"icm.AddCaseCompleted\",\n" +
                 "      \"title\" : \"Open Add Case page\",\n" +
                 "      \"direction\" : \"published\",\n" +
-                "      \"type\" : \"broadcast\",\n" +
-                "      \"description\" : \"This action broadcast an event to create  a new add case page with mentioned details in configurations\"\n" +
+                "      \"type\" : \"wiring\",\n" +
+                "      \"description\" : \" An event is published with new case information after case is created successfully\"\n" +
                 "    }\n" +
                 "  ]\n" +
                 "}";
