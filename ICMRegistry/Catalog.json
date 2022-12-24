@@ -2,6 +2,7 @@
   "Name" : "IBM AZ Case Manager Widget Package",
   "Description" : "IBM Case Manager AZ Custom Widget Package",
   "Locale" : "en",
+  "Version" : "1.0",
   "Categories" : [
     {
       "id" : "AZCaseWidgets",
