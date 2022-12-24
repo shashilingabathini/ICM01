@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Ant-Version: Apache Ant 1.7.1
 Created-By: 2.4 (IBM Corporation)
-Plugin-Class: com.ibm.icm.custom.ICMCustomPlugin
+Plugin-Class: com.ibm.icm.ICMCustomPlugin
 
 Name: build
 Built-By: C-CC6X897
