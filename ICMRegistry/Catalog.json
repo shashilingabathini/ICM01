@@ -1,0 +1,14 @@
+{
+  "Name" : "IBM AZ Case Manager Widget Package",
+  "Description" : "IBM Case Manager AZ Custom Widget Package",
+  "Locale" : "en",
+  "Categories" : [
+    {
+      "id" : "AZCaseWidgets",
+      "title" : "AZ Case Widgets"
+    }
+  ],
+  "Widgets" : [
+
+  ]
+}
