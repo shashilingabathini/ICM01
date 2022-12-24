@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ICMClient">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../ICMClient/ICMClient.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
