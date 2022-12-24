@@ -46,61 +46,32 @@ function(declare,Action,lang,array,Coordination) {
             if(caseType) {
               // create a new pending editable case
               this.solution.createNewCaseEditable(caseType,lang.hitch(this,function(pendingEditableCase) {
-                this.broadcastEvent("icm.AddCase" , {
-                    "caseType" : caseType,
-                    "caseEditable" : pendingEditableCase,
-                    "coordination" : new Coordination()
-                });
-                if(this.canClosePage) {
-                    //close the current page
-                    this._closeCasePage();
-                }
+              var casePage = this.getActionContext("CasePage");
+              var coordination = this.getActionContext("Coordination");
+              if(casePage && coordination) {
+                    // check any unsaved data so that do not create a new case
+                  coordination[0].step(this.icmBaseConst.BEFORECANCEL, lang.hitch(this,function(results, next, skip) {
+                            console.log('checking all before cancellation');
+                            next(); // let's move to next step
+							pendingEditableCase.propertiesCollection =  casePage[0].propertiesCollection;
+                            this.broadcastEvent("icm.AddCase" , {
+                                "caseType" : caseType,
+                                "caseEditable" : pendingEditableCase,
+                                "coordination" : new Coordination()
+                            });
+                            setTimeout(lang.hitch(this,function() {
+                                this.broadcastEvent("icm.ClosePage")
+                            }) , 1000)
+					 }),lang.hitch(this,function(errors, next, skip) {
+                            console.dir(errors);
+                            if(errors) {
+                               this.showConfirmationDialog('InstructMessageUnSavedDialog','ConfirmationMessageUnSaveDialog',errors,next,skip);
+                            }
+                    })).start();
+                 }
               }));
             }
-        },
-        _closeCasePage  : function() {
-            // to close case page see all the activities are completed with coordination
-            var casePage = this.getActionContext("CasePage");
-            var coordination = this.getActionContext("Coordination");
-
-            if(casePage && coordination) {
-                // so before closing page check BEFORECANCEL , CANCEL , AFTERCANCEL  logics  to see any uncommited information in page widget
-                coordination[0].step(this.icmBaseConst.BEFORECANCEL, lang.hitch(this,function(results, next, skip) {
-                    console.log('checking all before cancellation');
-                    console.dir(results);
-                    console.dir(next);
-                    console.dir(skip);
-                    next(); // let's move to next step
-                }),lang.hitch(this,function(errors, next, skip) {
-                        console.dir(errors);
-                        if(error)
-                            alert('there is an error to complete BEFORECANCEL');
-                })).step(this.icmBaseConst.CANCEL,lang.hitch(this,function(results,next,skip) {
-                    console.log('checking all  cancellation');
-                    console.dir(results);
-                    console.dir(next);
-                    console.dir(skip);
-                    next(); // let's move to next step
-                }), lang.hitch(this,function(errors, next, skip) {
-                    console.dir(errors);
-                    if(error)
-                        alert('there is an error to complete CANCEL');
-                })).step(this.icmBaseConst.AFTERCANCEL,lang.hitch(this,function(results,next,skip) {
-                    console.log('checking all  AFTER CANCEL');
-                    console.dir(results);
-                    console.dir(next);
-                    console.dir(skip);
-                    next(); // let's move to next step
-                    this.broadcastEvent("icm.ClosePage")
-                }), lang.hitch(this,function(errors, next, skip) {
-                    console.dir(errors);
-                    if(error)
-                        alert('there is an error to complete CANCEL');
-                })).start();
-            }
         }
-
-
     });
 
 });
