@@ -22,16 +22,17 @@ function(declare,Action,lang,array,Coordination) {
             this.solution = this.propertiesValue.solution;
             this.caseType = this.propertiesValue.caseType;
             // get all the solutions and check
-            ecm.model.desktop.retrieveSolutions(lang.hitch(this,_solutionsRetrieved(solutions)));
+            ecm.model.desktop.retrieveSolutions(lang.hitch(this,this._solutionsRetrieved(solutions)));
         },
 
         _solutionsRetrieved : function(solutions) {
             console.log('_solutionsRetrieved function is invoked');
+            console.dir(solutions)
             array.forEach(solutions, lang.hitch(this,function(solution) {
                 console.dir(solution);
                 if(this.solution == solution.id) {
                       this.solution = solution;
-                      this.solution.retrieveCaseType(this.caseType,lang.hitch(this,_caseRetrieved(caseType)));
+                      this.solution.retrieveCaseType(this.caseType,lang.hitch(this,this._caseRetrieved(caseType)));
                 }
             }))
         },
