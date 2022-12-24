@@ -80,6 +80,7 @@ public class ICMAddCaseAction extends PluginAction {
                 "      \"type\" : \"string\"\n" +
                 "    }\n" +
                 "  ],\n" +
+                "  \"actionModelClass\": \"icm.custom.action.AddCase\",\n" +
                 "  \"events\" : [\n" +
                 "    {\n" +
                 "      \"id\" : \"icm.OpenAddCasePage\",\n" +
@@ -97,5 +98,11 @@ public class ICMAddCaseAction extends PluginAction {
             e.printStackTrace();
         }
         return additionalActionConfigurations;
+    }
+
+    @Override
+    public String[] getMenuTypes() {
+        String[] icmMenu = new String[]{"ICMMenuType"};
+        return icmMenu; // add this to ICMMenuType which is for default ICMMenu Toolbar
     }
 }
