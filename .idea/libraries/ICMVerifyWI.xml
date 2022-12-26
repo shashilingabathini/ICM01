@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ICMVerifyWI">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../VerifyWI/ICMVerifyWI.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

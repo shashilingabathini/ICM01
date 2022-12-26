@@ -5,7 +5,7 @@ define([
 ],function(declare,BasePageWidget,ViewerContentPane) {
 
     return declare("icm.custom.pgwidget.viewer.AZViewer" ,[BasePageWidget,ViewerContentPane] , {
-
+        isViewer: true, // this is mandatory to avoid document to be opened by using default ICNNavigator Action
         constructor: function() {
             console.log('AZViewer is invoked');
         },
@@ -16,15 +16,12 @@ define([
         },
         handleICMAZ_OpenDocument : function(payload) {
             console.log('handling Open document event');
-            alert('document is opened');
             console.dir(payload);
             this.buildViewer();
             this.show(payload.contentItem,"open")
         },
         handleICMAZ_ClearContent : function(payload) {
             console.log('handling clear document event');
-            alert('clearing content');
-            console.dir(payload);
             this.destroyViewer();
             this.hideContentNode();
         }

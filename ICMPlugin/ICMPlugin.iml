@@ -17,5 +17,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="ICMClient" level="project" />
+    <orderEntry type="library" name="CmAcmCaseOperations" level="project" />
+    <orderEntry type="library" name="ICMVerifyWI" level="project" />
   </component>
 </module>
