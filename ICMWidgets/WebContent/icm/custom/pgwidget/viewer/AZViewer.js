@@ -4,7 +4,7 @@ define([
 "icm/custom/pgwidget/viewer/dijit/ViewerContentPane"
 ],function(declare,BasePageWidget,ViewerContentPane) {
 
-    return declare("icm.custom.pgwidget.viewer.Viewer" ,[BasePageWidget,ViewerContentPane] , {
+    return declare("icm.custom.pgwidget.viewer.AZViewer" ,[BasePageWidget,ViewerContentPane] , {
 
         constructor: function() {
 

@@ -18,7 +18,7 @@
       "definition" : "AZViewer.json",
       "preview" : "images/viewer_preview.gif",
       "icon" :  "images/viewer_icon.png",
-      "runtimeClassName" : "icm.custom.pgwidget.viewer.Viewer",
+      "runtimeClassName" : "icm.custom.pgwidget.viewer.AZViewer",
       "previewThumbnail" : "images/viewer_thumb.gif"
     }
   ]
