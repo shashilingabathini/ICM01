@@ -14,6 +14,12 @@ define([
         constructor : function() {
             console.log('viewer content pane constructor is invoked');
         },
+        addEmptyViewer : function() {
+            // when empty change textNode to empty content & imageNode with css styles
+             this.viewerTextNode.innerHTML = "No document is selected";
+             domStyle.set(this.viewerTextNode,"height","300px");
+             domStyle.set(this.viewerImageNode,"height","100px");
+        },
         /**
          *  This method set up a content viewer node only
          */
@@ -51,6 +57,7 @@ define([
         },
         show : function(contentItem ,action) {
             // action to open mode / preview mode
+            console.log('showing item');
             if(contentItem && (action && (action == "open" || action == "preview"))) {
                 if(this.contentViewer) {
                     this.contentViewer[action](contentItem);

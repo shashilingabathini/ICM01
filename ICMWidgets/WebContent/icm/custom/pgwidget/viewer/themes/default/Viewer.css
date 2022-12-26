@@ -1,8 +1,15 @@
 .viewerTextNode {
-
+    color: #666666;
+    font-family: Sans-Serif;
+    font-style: oblique;
+	padding: 16px;
+	text-align: center;
 }
 .viewerImageNode {
-
+    background-image: url(../../themes/default/images/Viewer.png);
+  	background-position: top center;
+  	background-repeat: no-repeat;
+  	height: 60px;
 }
 
 .viewerContentNode {

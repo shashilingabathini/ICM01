@@ -11,6 +11,7 @@ define([
         },
         postCreate : function() {
             console.log('AZViewer Post Create');
+            this.addEmptyViewer();
             this.buildViewer();
         },
         handleICMAZ_OpenDocument : function(payload) {
