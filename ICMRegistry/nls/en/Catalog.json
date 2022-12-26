@@ -1,0 +1,25 @@
+{
+  "Name" : "IBM AZ Case Manager Widget Package",
+  "Description" : "IBM Case Manager AZ Custom Widget Package",
+  "Locale" : "en",
+  "Version" : "1.0",
+  "Categories" : [
+    {
+      "id" : "AZCaseWidgets",
+      "title" : "AZ Case Widgets"
+    }
+  ],
+  "Widgets" : [
+    {
+      "id" : "AZViewer",
+      "title": "AZViewer",
+      "category": "AZCaseWidgets",
+      "description": "A widget to display documents (Case documents or WorkItem attachments)",
+      "definition" : "AZViewer.json",
+      "preview" : "images/viewer_preview.gif",
+      "icon" :  "images/viewer_icon.png",
+      "runtimeClassName" : "icm.custom.pgwidget.viewer.AZViewer",
+      "previewThumbnail" : "images/viewer_thumb.gif"
+    }
+  ]
+}
