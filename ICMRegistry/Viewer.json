@@ -1,0 +1,40 @@
+{
+  "id" : "Viewer",
+  "title" : "Viewer",
+  "description" : "A widget to display documents (Case documents or workitem documents)",
+  "category" : "AZCaseWidgets",
+  "definition": "Viewer.json",
+  "preview" : "images/viewer_preview.gif",
+  "icon" : "images/viewer_icon.png",
+  "runtimeClassName" : "icm.custom.pgwidget.viewer.Viewer",
+  "previewThumbnail" : "images/viewer_thumb.gif",
+  "properties" : [
+    {
+      "propertyType" : "property",
+      "type" : "string",
+      "id" : "PreferredHeight",
+      "required" : false,
+      "disabled" : false,
+      "defaultValue" : "500px",
+      "visibility" : false,
+      "title" : "Widget Height"
+    }
+  ],
+  "events" : [
+    {
+      "id" : "icm.OpenDocument",
+      "title" : "Open the document",
+      "functionName" : "handleICMAZ_OpenDocument",
+      "direction" : "subscribed",
+      "description": "Open the documents when event is wired with a valid payload in the Viewer Widget"
+    },
+    {
+      "id" : "icm.ClearContent",
+      "title" : "Clear Content",
+      "functionName" : "handleICMAZ_ClearContent",
+      "direction" : "subscribed",
+      "description" : "Clear the document view and close all the tabs in Content Viewer"
+    }
+  ]
+
+}

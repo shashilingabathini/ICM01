@@ -10,6 +10,16 @@
     }
   ],
   "Widgets" : [
-
+    {
+      "id" : "Viewer",
+      "title": "Viewer",
+      "category": "AZCaseWidgets",
+      "description": "A widget to display documents (Case documents or WorkItem attachments)",
+      "definition" : "Viewer.json",
+      "preview" : "images/viewer_preview.gif",
+      "icon" :  "images/viewer_icon.png",
+      "runtimeClassName" : "icm.custom.pgwidget.viewer.Viewer",
+      "previewThumbnail" : "images/viewer_thumb.gif"
+    }
   ]
 }

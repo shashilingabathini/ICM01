@@ -60,7 +60,7 @@ function(declare,Action,lang,array,Coordination) {
                                 "coordination" : new Coordination()
                             });
                             setTimeout(lang.hitch(this,function() {
-                                this.broadcastEvent("icm.ClosePage")
+                                this.broadcastEvent("icm.ClosePage"); // close the current (case details , work details or any other page which is using this information)
                             }) , 1000)
 					 }),lang.hitch(this,function(errors, next, skip) {
                             console.dir(errors);
