@@ -16,9 +16,9 @@ define([
         },
         addEmptyViewer : function() {
             // when empty change textNode to empty content & imageNode with css styles
-             this.viewerTextNode.innerHTML = "No document is selected";
-             domStyle.set(this.viewerTextNode,"height","300px");
-             domStyle.set(this.viewerImageNode,"height","100px");
+             this.textNode.innerHTML = "No document is selected";
+             domStyle.set(this.textNode,"height","300px");
+             domStyle.set(this.imageNode,"height","100px");
         },
         /**
          *  This method set up a content viewer node only
