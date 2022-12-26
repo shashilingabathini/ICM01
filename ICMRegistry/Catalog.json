@@ -11,11 +11,11 @@
   ],
   "Widgets" : [
     {
-      "id" : "Viewer",
-      "title": "Viewer",
+      "id" : "AZViewer",
+      "title": "AZViewer",
       "category": "AZCaseWidgets",
       "description": "A widget to display documents (Case documents or WorkItem attachments)",
-      "definition" : "Viewer.json",
+      "definition" : "AZViewer.json",
       "preview" : "images/viewer_preview.gif",
       "icon" :  "images/viewer_icon.png",
       "runtimeClassName" : "icm.custom.pgwidget.viewer.Viewer",

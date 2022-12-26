@@ -1,0 +1,44 @@
+{
+  "ICM_ACTION_COMPATIBLE" : true,
+  "context" : [[ "CasePage" , "Coordination" ]],
+  "name" : "Custom Add Case Action",
+  "description" : "A custom add case action will be used for adding a custom case in a case page",
+  "properties" : [
+    {
+      "id": "label",
+      "title" : "Add Button Name",
+      "defaultValue" : "Custom Add Case Action",
+      "type" : "string",
+      "isLocalized" : false
+    },
+    {
+      "id" : "solution",
+      "type" : "string",
+      "isLocalized" : false,
+      "title" : "Solution Name",
+      "defaultValue" : ""
+    },
+    {
+      "id" : "caseType",
+      "title" : "Case Type",
+      "isLocalized" : false,
+      "type" : "string"
+    },
+    {
+      "id" : "canClosePage",
+      "title" : "Do you want to close case details page when event (icn.AddCase) is run ?",
+      "type" : "boolean",
+      "defaultValue" : false,
+      "isLocalized" : false
+    }
+  ],
+  "events" : [
+    {
+      "id" : "icm.AddCaseCompleted",
+      "title" : "Open Add Case page",
+      "direction" : "published",
+      "type" : "wiring",
+      "description" : " An event is published with new case information after case is created successfully"
+    }
+  ]
+}

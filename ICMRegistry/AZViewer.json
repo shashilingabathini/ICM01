@@ -1,9 +1,9 @@
 {
-  "id" : "Viewer",
-  "title" : "Viewer",
+  "id" : "AZViewer",
+  "title" : "AZViewer",
   "description" : "A widget to display documents (Case documents or workitem documents)",
   "category" : "AZCaseWidgets",
-  "definition": "Viewer.json",
+  "definition": "AZViewer.json",
   "preview" : "images/viewer_preview.gif",
   "icon" : "images/viewer_icon.png",
   "runtimeClassName" : "icm.custom.pgwidget.viewer.Viewer",
