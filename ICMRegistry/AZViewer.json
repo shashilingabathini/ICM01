@@ -20,20 +20,41 @@
       "title" : "Widget Height"
     }
   ],
-  "events" : [
+  "events":[
     {
-      "id" : "icm.OpenDocument",
-      "title" : "Open the document",
-      "functionName" : "handleICMAZ_OpenDocument",
-      "direction" : "subscribed",
-      "description": "Open the documents when event is wired with a valid payload in the Viewer Widget"
+      "id":"icm.OpenDocument",
+      "title":"Open document",
+      "functionName":"handleICM_OpenDocumentEvent",
+      "direction":"subscribed",
+      "description":"Open the document that is contained in the event payload in the Viewer widget."
     },
     {
-      "id" : "icm.ClearContent",
-      "title" : "Clear Content",
-      "functionName" : "handleICMAZ_ClearContent",
-      "direction" : "subscribed",
-      "description" : "Clear the document view and close all the tabs in Content Viewer"
+      "id":"icm.SendCaseInfo",
+      "title":"Send case information",
+      "functionName":"handleICM_SendCaseInfoEvent",
+      "direction":"subscribed",
+      "description":"Save the case ID in the cache and close currently viewed documents to prepare for opening documents from another case."
+    },
+    {
+      "id":"icm.SelectCase",
+      "title":"Select case",
+      "functionName":"handleICM_SelectCaseEvent",
+      "direction":"subscribed",
+      "description":"Display the case information for the case that is contained in the event payload."
+    },
+    {
+      "id":"icm.SendWorkItem",
+      "title":"Receive work item",
+      "functionName":"handleICM_SendWorkItemEvent",
+      "direction":"subscribed",
+      "description":"Display the work item that is contained in the event payload."
+    },
+    {
+      "id":"icm.ClearContent",
+      "title":"Clear content",
+      "functionName":"handleICM_ClearContentEvent",
+      "direction":"subscribed",
+      "description":"Clear the content of Viewer widget and the cached identifiers, and then close all tabs."
     }
   ]
 
